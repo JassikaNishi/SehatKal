@@ -1,7 +1,7 @@
 import React from "react";
 import "./aboutus.css";
 
-function About() {
+function AboutUs() {
     return (
         <>
             <div className="about">
@@ -9,7 +9,7 @@ function About() {
                     <div className="logo-container">
                         <div className="logo">
                             <span className="logo1"></span>
-                            ROSE
+                            FitTrack
                         </div>
                     </div>
 
@@ -18,13 +18,9 @@ function About() {
                         <li><a href="#about">About Us</a>
                             <div className="dropdown">
                                 <a href="#aboutus">About Us</a>
-                                <a href="#product">About Our Product</a>
+                                <a href="#product">Our Product</a>
                             </div>
                         </li>
-                       
-                       
-                        
-                        
                     </ul>
                 </div>
 
@@ -32,21 +28,15 @@ function About() {
                     <div className="section-title">About Us</div>
                     <div className="section-content">
                         <p>
-                            ROSE is a dynamic team of tech enthusiasts dedicated to bringing innovative solutions to the market.
-                            Our passion for technology drives us to create products that not only meet the needs of today but also
-                            anticipate the demands of tomorrow. Explore our site to learn more about our services, our team, and how
-                            we can help you achieve your goals.
+                            At <strong>FitTrack</strong>, we are passionate about helping students lead healthier, more active lives. Our mission is to provide an easy-to-use platform that empowers students to track their daily fitness and wellness activities. We believe that a balanced lifestyle—incorporating regular physical activity and proper hydration—is essential to a student's well-being and academic success.
                         </p>
                         <h3>Our Mission</h3>
                         <p>
-                            At ROSE, our mission is to leverage cutting-edge technology to deliver high-quality, user-friendly products
-                            that enhance productivity and improve the lives of our customers.
+                            Our mission is to deliver an accessible and effective way for students to track their daily steps, water intake, and fitness goals, helping them stay motivated to improve their physical and mental health.
                         </p>
                         <h3>Our Vision</h3>
                         <p>
-                            We envision a future where technology seamlessly integrates into daily life, making tasks easier and more
-                            efficient. Our goal is to be at the forefront of this technological revolution, providing solutions that
-                            are not only innovative but also accessible to everyone.
+                            We envision a future where students embrace healthy living habits that will lead them to success both in and out of the classroom. We want to foster a community that actively encourages and supports fitness and well-being.
                         </p>
                     </div>
                 </div>
@@ -55,17 +45,17 @@ function About() {
                     <div className="section-title">Our Values</div>
                     <div className="section-content">
                         <ul>
-                            <li><strong>Innovation:</strong> We strive to bring new and creative solutions to the market.</li>
-                            <li><strong>Quality:</strong> We are committed to delivering high-quality products that exceed customer expectations.</li>
-                            <li><strong>Integrity:</strong> We conduct our business with honesty and transparency.</li>
-                            <li><strong>Customer Focus:</strong> We put our customers at the center of everything we do.</li>
+                            <li><strong>Innovation:</strong> We strive to provide new, creative tools that support students' health and fitness goals.</li>
+                            <li><strong>Quality:</strong> We are committed to delivering high-quality, user-friendly solutions for students' wellness.</li>
+                            <li><strong>Integrity:</strong> We operate with transparency and honesty, offering solutions that students can trust.</li>
+                            <li><strong>Student Focus:</strong> We are dedicated to helping students lead healthier, balanced lives that improve both their academic and personal well-being.</li>
                         </ul>
                     </div>
                 </div>
 
                 <footer className="footer">
                     <div className="section-content">
-                        &copy; 2024 ROSE. All rights reserved.
+                        &copy; 2024 FitTrack. All rights reserved.
                     </div>
                 </footer>
             </div>
@@ -73,4 +63,4 @@ function About() {
     );
 }
 
-export default About;
+export default AboutUs;
