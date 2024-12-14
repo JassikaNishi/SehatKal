@@ -1,37 +1,31 @@
 import React from 'react';
-<<<<<<< HEAD
-import { useState } from 'react'
-import './App.css';
-import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
-import AboutUs from "./Components/AboutUS";
-import Contact from "./Components/ContactPage";
-=======
-import { useState } from 'react';
-import Navbar from './Components/Navbar.jsx';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './Components/Navbar';
+import AboutUS from './Components/AboutUS';
+import ContactPage from './Components/ContactPage';
+import Login from './Components/Login';
+import Signup from './Components/Signup';
+import { AuthProvider } from './Components/AuthProvider'; 
 
->>>>>>> b42b16c (Modified files)
-function App() {
-  const [count, setCount] = useState(0)
+import './index.css';
 
+
+const App = () => {
   return (
-    <>
-<<<<<<< HEAD
+    <AuthProvider>
       <Router>
-        <Routes>
-          <Route path='/AboutUs' element={<AboutUs/>}/>
-          <Route path='/Contact' element={<Contact/>}/>
-
-
-
-        </Routes>
+        <Navbar />
+        <div className="mt-20">
+          <Routes>
+            <Route path="/about-us" element={<AboutUS />} />
+            <Route path="/contact-page" element={<ContactPage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+          </Routes>
+        </div>
       </Router>
-=======
-    <Navbar/>
-      
->>>>>>> b42b16c (Modified files)
-    </>
-  )
-}
+    </AuthProvider>
+  );
+};
 
-export default App
+export default App;

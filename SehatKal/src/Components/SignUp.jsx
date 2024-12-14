@@ -2,8 +2,8 @@ import React,{useContext, useState} from 'react';
 import {Link, useLocation, useNavigate} from 'react-router-dom';
 import { AiFillBook, AiFillGoogleCircle} from 'react-icons/ai';
 import { CiLogin } from "react-icons/ci";
-import "../components/loginStyle.css";
-import { AuthContext } from '../contects/AuthProvider';
+import "../Components/loginstyle.css";
+import { AuthContext } from '../Components/AuthProvider';
 
 
 
