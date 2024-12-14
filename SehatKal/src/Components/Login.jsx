@@ -1,9 +1,9 @@
 import React, {useState,useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import "../Components/loginstyle.css";
 import { AiFillBook, AiFillGoogleCircle } from 'react-icons/ai';
 import { CiLogin } from "react-icons/ci";
 import { AuthContext } from '../Components/AuthProvider';
+import "./loginstyle.css";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -97,7 +97,7 @@ export default function Login() {
 
           <div className="text-center">
             <button className='btn login-btn py-2 px-2 rounded-3' type="submit">
-              Login <CiLogin />
+              Login 
             </button>
           </div>
 
@@ -113,7 +113,7 @@ export default function Login() {
           </div>
 
           <div className="text-center mt-4">
-            Don't have an Account? <Link to="/sign-up" className='loginLink'>Sign Up</Link>
+            Don't have an Account? <Link to="/signup" className='loginLink'>Sign Up</Link>
           </div>
 
           <div className='text-center mt-4'>
