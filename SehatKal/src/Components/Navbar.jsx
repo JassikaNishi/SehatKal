@@ -31,6 +31,7 @@ const Navbar = () => {
         { link: "Signup", path: "/signup" },
         { link: "Tips And Resources", path: "/tips" },
         { link: "Profile", path: "/profile" },
+        { link: "Analytics", path: "/analytics" },
     ];
 
     return (

@@ -1,8 +1,8 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
-import { Chart as ChartJS, Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale } from "chart.js";
+import { Chart as ChartJS, Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale, PointElement } from "chart.js";
 
-ChartJS.register(Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale);
+ChartJS.register(Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale, PointElement);
 
 const Analytics = () => {
   const data = {
@@ -36,6 +36,7 @@ const Analytics = () => {
   };
 
   return (
+    <div className="bg-gray-100 min-h-screen">
     <div className="container mx-auto p-8">
       <h1 className="text-3xl font-bold text-gray-800 mb-8">Your Health Analytics</h1>
 
@@ -54,10 +55,25 @@ const Analytics = () => {
         </div>
       </div>
 
-      <div className="bg-white p-6 rounded-lg shadow-lg mb-8">
+      <div className="bg-white p-6 rounded-lg shadow-lg mb-8" style={{ height: "250px", width: "100%" }}>
         <h3 className="text-xl font-semibold text-gray-700 mb-4">Your Progress Over Time</h3>
-        <Line data={data} options={{ responsive: true, maintainAspectRatio: false }} />
+        <Line 
+          data={data} 
+          options={{ 
+            responsive: true, 
+            maintainAspectRatio: false,
+            scales: {
+              x: {
+                beginAtZero: true
+              },
+              y: {
+                beginAtZero: true
+              }
+            }
+          }} 
+        />
       </div>
+    </div>
     </div>
   );
 };
