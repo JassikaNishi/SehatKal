@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import { json } from "body-parser";
+import fs from "fs";
+import path from "path";
 
 const app = express();
 
@@ -25,6 +27,11 @@ let progressData = [
     calories: 2100,
   },
 ];
+
+const writeToAnalyticsFile = () => {
+  const filePath = path.join(__dirname, "analytics.json");
+  fs.writeFileSync(filePath, JSON.stringify(progressData, null, 2));
+};
 
 app.get("/api/progress", (req, res) => {
   const { period } = req.query;
@@ -54,7 +61,6 @@ app.get("/api/progress", (req, res) => {
   res.status(200).json(filteredData);
 });
 
-
 app.post("/api/progress", (req, res) => {
   const { date, steps, water, sleep, workout, calories } = req.body;
 
@@ -72,7 +78,30 @@ app.post("/api/progress", (req, res) => {
   };
 
   progressData.push(newProgress);
+  writeToAnalyticsFile();
+
   res.status(201).json(newProgress);
+});
+
+app.get("/api/analytics", (req, res) => {
+  const filePath = path.join(__dirname, "analytics.json");
+
+  if (fs.existsSync(filePath)) {
+    const fileContent = fs.readFileSync(filePath, "utf8");
+    res.status(200).json(JSON.parse(fileContent));
+  } else {
+    res.status(404).json({ error: "Analytics file not found" });
+  }
+});
+
+app.get("/api/download-analytics", (req, res) => {
+  const filePath = path.join(__dirname, "analytics.json");
+
+  if (fs.existsSync(filePath)) {
+    res.download(filePath, "analytics.json");
+  } else {
+    res.status(404).json({ error: "Analytics file not found" });
+  }
 });
 
 const PORT = process.env.PORT || 5000;

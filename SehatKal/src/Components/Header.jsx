@@ -47,6 +47,7 @@ const Header = () => {
     { link: "Contact Us", path: "/contact-page" },
     { link: "Tips And Resources", path: "/tips" },
     { link: "Dashboard", path: "/dashboard" },
+    { link: "Analytics", path: "/analytics" },
   ];
 
   return (

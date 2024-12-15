@@ -4,11 +4,13 @@ import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement
 import "./Dashboard.css";
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+
 const useFadeIn = () => {
   return {
     animation: 'fadeIn 1s ease-in-out',
   };
 };
+
 const Dashboard = () => {
   const fadeIn = useFadeIn();
   const [steps, setSteps] = useState("");
