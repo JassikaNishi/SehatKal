@@ -57,7 +57,6 @@ const ProfilePage = () => {
           </label>
         </div>
 
-        {/* Profile Form */}
         <div className="flex flex-col w-full mt-6">
           <h2 className="text-3xl text-gray-800 font-semibold">{name}</h2>
           <p className="text-lg text-gray-600 mb-6">{bio}</p>

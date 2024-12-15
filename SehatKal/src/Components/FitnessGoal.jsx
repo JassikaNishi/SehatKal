@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+const useFadeIn = () => {
+  return {
+    animation: 'fadeIn 1s ease-in-out',
+  };
+};
 const FitnessGoal = () => {
+  const fadeIn = useFadeIn();
   const [stepsGoal, setStepsGoal] = useState('');
   const [waterGoal, setWaterGoal] = useState('');
   const [sleepGoal, setSleepGoal] = useState('');

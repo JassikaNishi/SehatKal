@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Homepage.css";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     const elements = document.querySelectorAll(".animate-on-scroll");
     const observer = new IntersectionObserver(
@@ -26,6 +29,10 @@ const HomePage = () => {
     });
   }, []);
 
+  const handleGetStartedClick = () => {
+    navigate("/dashboard");
+  };
+
   return (
     <div className="bg-[#f9f8f8] min-h-screen text-gray-800 font-sans relative overflow-hidden">
       <div className="cursor"></div>
@@ -41,7 +48,10 @@ const HomePage = () => {
           every step of the way. Whether you're aiming to lose weight, gain
           strength, or maintain a balanced lifestyle, we are here to guide you.
         </p>
-        <button className="bg-[#6a6f54] text-white px-10 py-4 rounded-full shadow-lg hover:bg-[#5a5e45] transition duration-300">
+        <button
+          className="bg-[#6a6f54] text-white px-10 py-4 rounded-full shadow-lg hover:bg-[#5a5e45] transition duration-300"
+          onClick={handleGetStartedClick}
+        >
           Get Started
         </button>
       </section>

@@ -56,12 +56,11 @@ export default function Login() {
   return (
     <div className="row g-0 justify-content-center align-items-center login-container mt-3">
       <div className="col-10 row g-0 border rounded-2 bg-white mb-8">
-        {/* Left Section */}
+     
         <div className="d-none d-md-block col-6">
           <img src="./login.jpg" alt="" className="img-fluid h-100" />
         </div>
 
-        {/* Form Section */}
         <form className="col-12 col-md-6 px-3 py-3" onSubmit={handleSignIn}>
           
 
@@ -69,7 +68,6 @@ export default function Login() {
 
           <h5 className="text-center fst-italic mb-3">Login</h5>
 
-          {/* Email Input */}
           <div className="form-floating mb-3">
             <input
               type="email"
@@ -83,7 +81,6 @@ export default function Login() {
             <label htmlFor="email">Email</label>
           </div>
 
-          {/* Password Input */}
           <div className="form-floating mb-3">
             <input
               type="password"
@@ -97,7 +94,6 @@ export default function Login() {
             <label htmlFor="password">Password</label>
           </div>
 
-          {/* Submit Button */}
           <div className="text-center">
             <button
               type="submit"
@@ -116,7 +112,6 @@ export default function Login() {
 
          <OAuth/>
 
-          {/* Footer Links */}
           <div className="text-center mt-4">
             Don't have an Account? <Link to="/signup" className="loginLink">Sign Up</Link>
           </div>

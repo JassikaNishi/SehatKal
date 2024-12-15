@@ -1,5 +1,5 @@
 import React from 'react';
-import './about.css';  // Import the CSS file
+import './about.css'; 
 
 const useFadeIn = () => {
   return {
@@ -40,7 +40,7 @@ export default function AboutUs() {
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: '40px',
-    paddingTop: '60px', // Prevent image overlap
+    paddingTop: '60px', 
     animation: 'fadeIn 2s ease-in-out',
   };
 
@@ -77,7 +77,6 @@ export default function AboutUs() {
       <div style={{ padding: '20px', textAlign: 'center' }}>
         <h1 style={headingStyle}>About Us</h1>
 
-        {/* Mission Section */}
         <div style={sectionStyle}>
           <div
             style={{
@@ -94,7 +93,7 @@ export default function AboutUs() {
           </div>
         </div>
 
-        {/* Vision Section */}
+  
         <div style={sectionStyle}>
           <div style={textSectionStyle}>
             <h2 style={subHeadingStyle}>Our Vision</h2>
@@ -111,7 +110,6 @@ export default function AboutUs() {
           ></div>
         </div>
 
-        {/* Values Section */}
         <div style={sectionStyle}>
           <div style={{ ...imageWithTextStyle, backgroundImage: `url("https://www.eosworldwide.com/wp-content/uploads/2016/11/corevalues.jpeg")` }}>
             <div>
@@ -127,7 +125,6 @@ export default function AboutUs() {
           </div>
         </div>
 
-        {/* Team Section */}
         <div style={{ ...sectionStyle, flexDirection: 'row-reverse' }}>
           <div
             style={{

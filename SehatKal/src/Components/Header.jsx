@@ -7,7 +7,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState(""); // New state to track active tab
+  const [activeTab, setActiveTab] = useState(""); 
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -42,10 +42,11 @@ const Header = () => {
   }, []);
 
   const navItems = [
+    { link: "Home", path: "/home" },
     { link: "About Us", path: "/aboutus" },
     { link: "Contact Us", path: "/contact-page" },
     { link: "Tips And Resources", path: "/tips" },
-    { link: "Analytics", path: "/analytics" },
+    { link: "Dashboard", path: "/dashboard" },
   ];
 
   return (
@@ -65,7 +66,7 @@ const Header = () => {
               <li key={path}>
                 <Link
                   to={path}
-                  onClick={() => setActiveTab(path)} // Set active tab on click
+                  onClick={() => setActiveTab(path)} 
                   className={`text-base text-black uppercase cursor-pointer hover:text-blue-300 ${activeTab === path ? "text-blue-500 font-bold" : ""}`} // Apply styles when active
                 >
                   {link}

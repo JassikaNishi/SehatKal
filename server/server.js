@@ -1,11 +1,11 @@
-const express = require("express");
-const cors = require("cors");
-const bodyParser = require("body-parser");
+import express from "express";
+import cors from "cors";
+import { json } from "body-parser";
 
 const app = express();
 
 app.use(cors());
-app.use(bodyParser.json());
+app.use(json());
 
 let progressData = [
   {
@@ -26,7 +26,6 @@ let progressData = [
   },
 ];
 
-// Endpoint to get progress data with optional period filtering
 app.get("/api/progress", (req, res) => {
   const { period } = req.query;
 

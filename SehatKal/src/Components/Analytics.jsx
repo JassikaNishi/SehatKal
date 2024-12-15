@@ -3,7 +3,11 @@ import { Line } from "react-chartjs-2";
 import { Chart as ChartJS, Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale, PointElement } from "chart.js";
 
 ChartJS.register(Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale, PointElement);
-
+const useFadeIn = () => {
+  return {
+    animation: 'fadeIn 1s ease-in-out',
+  };
+};
 const Analytics = () => {
   const [progressData, setProgressData] = useState([]);
   const [selectedPeriod, setSelectedPeriod] = useState("Weekly");
