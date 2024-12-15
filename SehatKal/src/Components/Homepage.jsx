@@ -1,144 +1,123 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 const HomePage = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    arrows: true,
-    autoplay: true,
-    autoplaySpeed: 3000,
-  };
-
   return (
-    <div className="relative min-h-screen font-sans text-white">
-      <div className="absolute inset-0 overflow-hidden z-0">
-        <video autoPlay loop muted className="w-full h-full object-cover">
-          <source src="/bg.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+    <div className="bg-[#f9f8f5] min-h-screen text-gray-800 font-sans">
+      {/* Header */}
+      {/* <header className="bg-[#ded8c7] py-8 px-6 flex items-center justify-between shadow-md">
+        <h1 className="text-4xl font-bold text-[#6a6f54]">SehatKal.co</h1>
+      </header> */}
+
+      <section className="text-center py-20 px-8 relative overflow-hidden">
+  {/* <img 
+    src="./1image.jpg" 
+    alt="Healthy Life"
+    className="w-full h-40vh z-index=-10 max-w-none mx-auto rounded-lg shadow-lg mb-8"
+  /> */}
+  <div className="absolute -top-16 -left-16 w-64 h-64 bg-[#ded8c7] rounded-full opacity-25 z-10"></div>
+  <div className="absolute bottom-0 right-0 w-40 h-40 bg-[#ded8c7] rounded-full opacity-25 z-10"></div>
+  <h2 className="text-5xl font-extrabold text-[#6a6f54] mb-6">
+    Your Journey to a Healthier Life
+  </h2>
+  <p className="text-lg text-[#8b8f78] max-w-3xl mx-auto mb-10">
+    Achieve your fitness goals, monitor your progress, and stay motivated
+    every step of the way. Whether you're aiming to lose weight, gain strength, 
+    or maintain a balanced lifestyle, we are here to guide you.
+  </p>
+  <button className="bg-[#6a6f54] text-white px-10 py-4 rounded-full shadow-lg hover:bg-[#5a5e45] transition duration-300">
+    Get Started
+  </button>
+</section>
+
+      <section>
+        <img 
+          src="./clear.jpg" 
+          alt="Healthy Life"
+          className="w-screen h-[70vh] object-cover shadow-lg"
+        />
+      </section>
+
+      <section className="py-20 px-10 bg-[#f4f4f4]">
+        <div className="flex flex-col md:flex-row items-center gap-12">
+       
+          <div className="w-full md:w-5/12">
+            <img 
+              src="./4image.jpg" 
+              alt="Healthy Life" 
+              className="w-full h-[85vh] object-cover shadow-lg rounded-lg" 
+            />
+          </div>
+
+          <div className="w-full md:w-7/12 space-y-12 bg-white/70 backdrop-blur-md p-8 rounded-lg shadow-lg">
+        
+            <div>
+              <h3 className="text-3xl font-bold text-[#6a6f54] mb-4">
+                Track Daily Steps
+              </h3>
+              <p className="text-gray-600 text-lg">
+                Keep an eye on your daily step count to maintain a healthy level
+                of physical activity. Set personal walking goals and challenge yourself
+                to increase your daily steps over time. Whether you're walking for fitness
+                or for leisure, we help you stay motivated and on track.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-3xl font-bold text-[#6a6f54] mb-4">
+                Monitor Water Intake
+              </h3>
+              <p className="text-gray-600 text-lg">
+                Staying hydrated is crucial for your health. Monitor your daily water intake
+                and set personalized hydration goals to ensure you're getting enough water.
+                Keeping track of your hydration levels helps improve energy, skin health, and
+                overall wellness.
+              </p>
+            </div>
+
+        
+            <div>
+              <h3 className="text-3xl font-bold text-[#6a6f54] mb-4">
+                Set and Achieve Goals
+              </h3>
+              <p className="text-gray-600 text-lg">
+                Setting realistic fitness goals is the first step to improving your health. 
+                Whether it's losing weight, building muscle, or improving cardiovascular health,
+                we provide tools to help you set, track, and achieve your fitness objectives. Celebrate
+                your progress and milestones along the way to stay motivated and focused.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="py-8">
+        <div className="w-full border-t-4 border-dotted border-[#ded8c7]"></div>
       </div>
 
-      <div className="relative z-10">
-        <header className="relative z-10 flex justify-between items-center px-8 py-6 bg-pastel-purple rounded-b-xl">
-          <h1 className="text-4xl font-semibold">Health & Fitness Tracker</h1>
-        </header>
+      <section className="py-20 px-10 bg-[#eae6da]">
+        <h3 className="text-4xl font-bold text-[#6a6f54] text-center mb-12">
+          Contact Us
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="p-8 bg-white rounded-xl shadow-lg">
+            <h4 className="text-2xl font-bold text-[#6a6f54] mb-4">Jassika</h4>
+            <p>Email: <a href="mailto:jassika@example.com" className="text-blue-500">jassika@example.com</a></p>
+            <p>Phone: +123 456 7890</p>
+            <p>We would love to hear from you! Feel free to reach out with any questions or feedback.</p>
+          </div>
+          <div className="p-8 bg-white rounded-xl shadow-lg">
+            <h4 className="text-2xl font-bold text-[#6a6f54] mb-4">Anisha Plawat</h4>
+            <p>Email: <a href="mailto:anisha@example.com" className="text-blue-500">anisha@example.com</a></p>
+            <p>Phone: +987 654 3210</p>
+            <p>If you're interested in collaboration or partnerships, don't hesitate to get in touch!</p>
+          </div>
+        </div>
+      </section>
 
-        <main className="relative z-10">
-          <section className="text-center px-8 pt-16">
-            <h2 className="text-5xl font-semibold text-pastel-teal mb-6">
-              Stay Healthy, Stay Fit
-            </h2>
-            <p className="text-xl text-gray-200 mb-8">
-              Track your steps, water intake, set fitness goals, and live a healthier life with our easy-to-use platform.
-            </p>
-          </section>
-
-          <section
-            id="carousel"
-            className="px-8 mt-12"
-            style={{ maxWidth: "100vw", margin: "0 " }}
-          >
-            <Slider {...settings}>
-              <div className="relative h-[50vh]">
-                <Link to="/about-us">
-                  <img
-                    src="./login111.png"
-                    alt="Log Daily Steps"
-                    className="w-full h-full object-cover rounded-lg shadow-lg"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-70">
-                    <p className="text-2xl font-semibold">Log Daily Steps</p>
-                  </div>
-                </Link>
-              </div>
-              <div className="relative h-[50vh]">
-                <Link to="/contact-page">
-                  <img
-                    src="./login.jpg"
-                    alt="Track Water Intake"
-                    className="w-full h-full object-cover rounded-lg shadow-lg"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-70">
-                    <p className="text-2xl font-semibold">Track Water Intake</p>
-                  </div>
-                </Link>
-              </div>
-              <div className="relative h-[50vh]">
-                <Link to="/signup">
-                  <img
-                    src="./lo.jpg"
-                    alt="Set Fitness Goals"
-                    className="w-full h-full object-cover rounded-lg shadow-lg"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-70">
-                    <p className="text-2xl font-semibold">Set Fitness Goals</p>
-                  </div>
-                </Link>
-              </div>
-              <div className="relative h-[50vh]">
-                <Link to="/analytics">
-                  <img
-                    src="./login.jpg"
-                    alt="View Analytics"
-                    className="w-full h-full object-cover rounded-lg shadow-lg"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-100">
-                    <p className="text-2xl font-semibold">View Analytics</p>
-                  </div>
-                </Link>
-              </div>
-            </Slider>
-          </section>
-
-          <section
-            id="goals"
-            className="mt-16 px-8 py-12 bg-pastel-blue rounded-lg shadow-xl text-center"
-          >
-            <h3 className="text-3xl font-semibold mb-4">Set & Achieve Your Fitness Goals</h3>
-            <p className="text-lg mb-8">
-              Whether you're aiming to walk more steps, drink more water, or improve your fitness, we help you track and achieve your goals.
-            </p>
-          </section>
-
-          <section className="mt-16 px-8">
-            <div className="relative h-72 bg-pastel-peach rounded-lg shadow-lg flex items-center justify-center">
-              <p className="text-center font-semibold text-xl">Fitness Tips & Motivation</p>
-            </div>
-          </section>
-
-          <section
-            id="statistics"
-            className="mt-16 px-8 py-12 bg-gradient-to-r from-pastel-blue to-pastel-lavender rounded-lg text-center"
-          >
-            <h3 className="text-3xl font-semibold mb-4">Your Fitness Journey in Numbers</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-              <div className="h-40 bg-pastel-teal rounded-lg flex items-center justify-center shadow-lg">
-                <p className="text-xl">10,000 Steps Walked</p>
-              </div>
-              <div className="h-40 bg-pastel-teal rounded-lg flex items-center justify-center shadow-lg">
-                <p className="text-xl">3L+ Water Intake</p>
-              </div>
-              <div className="h-40 bg-pastel-teal rounded-lg flex items-center justify-center shadow-lg">
-                <p className="text-xl">100+ Fitness Goals Achieved</p>
-              </div>
-              <div className="h-40 bg-pastel-teal rounded-lg flex items-center justify-center shadow-lg">
-                <p className="text-xl">200+ Tips Shared</p>
-              </div>
-            </div>
-          </section>
-        </main>
-
-        <footer className="mt-16 py-6 bg-pastel-purple text-center text-gray-500 rounded-t-xl">
-          &copy; {new Date().getFullYear()} Health & Fitness Tracker. All rights reserved.
-        </footer>
-      </div>
+      <footer className="bg-[#ded8c7] py-6 text-center text-[#6a6f54] text-sm">
+        &copy; {new Date().getFullYear()} SehatKal.co. All rights reserved.
+      </footer>
     </div>
   );
 };
