@@ -13,11 +13,13 @@ SehatKal is a modern, responsive web application that provides users with the ab
 - [Contact](#contact)
 
 ## Features
-- **Health Data Tracking**: Allows users to input and track their health metrics such as weight, blood pressure, and heart rate.
-- **Consultation Services**: Users can schedule consultations with healthcare professionals through the platform.
-- **User Authentication**: Secure registration and login system for both users and healthcare professionals.
-- **Responsive Design**: The platform is mobile-friendly and adapts to different screen sizes.
-- **Real-time Data**: Health data updates in real-time, allowing users to track their health status easily.
+- **Health Data Tracking**: Allows users to input and track their health metrics such as weight, blood pressure, and heart rate. The platform helps users monitor their well-being and make informed decisions about their health.
+- **User Authentication**: Provides a secure registration and login system for both users and healthcare professionals. This ensures that personal health information and accounts are protected.
+- **Responsive Design**: The website is designed to be fully responsive, providing a seamless experience across all devices, including desktops, tablets, and smartphones.
+- **Real-Time Data Updates**: Health data is updated in real time, allowing users to track their health progress and receive the most current information about their well-being.
+- **User-Friendly Interface**: The website features an intuitive interface for easy navigation, allowing users to easily access features like health tracking, consultation booking, and their personal profile.
+- **Interactive Dashboard**: Provides users with a personalized dashboard where they can view and analyze their health metrics over time. This feature makes tracking progress and setting health goals easy and accessible.
+
 
 ## Technologies Used
 - **Frontend**: React.js, HTML, CSS, JavaScript, Tailwind CSS, Vite
