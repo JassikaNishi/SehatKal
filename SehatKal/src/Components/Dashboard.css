@@ -1,0 +1,139 @@
+.dashboard-container {
+    font-family: 'Arial', sans-serif;
+    background-color: #F5F6FA;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .dashboard-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  h1 {
+    font-size: 3.5em;
+    color: #2D3436;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .dashboard-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  
+  .summary-left {
+    width: 60%;
+    padding: 25px;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .summary-left h2 {
+    font-size: 2.5em;
+    color: #2D3436;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .summary-item {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #F1F2F6;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .summary-item h3 {
+    font-size: 1.3em;
+    color: #34495E;
+  }
+  
+  .summary-item p {
+    font-size: 1.1em;
+    color: #7F8C8D;
+    margin-right: 20px;
+  }
+  
+  .progress-bar {
+    width: 80%;
+    height: 10px;
+    background-color: #ECF0F1;
+    border-radius: 5px;
+  }
+  
+  .progress {
+    height: 100%;
+    border-radius: 5px;
+  }
+  
+  .input-right {
+    width: 35%;
+    padding: 25px;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .input-right h2 {
+    font-size: 2.2em;
+    color: #2D3436;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  
+  .input-item {
+    margin-bottom: 20px;
+  }
+  
+  .input-item label {
+    font-size: 1.1em;
+    color: #34495E;
+    margin-bottom: 5px;
+  }
+  
+  .input-item input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    border-radius: 8px;
+    border: 1px solid #BDC3C7;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #3498DB;
+    color: white;
+    font-size: 1.3em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .submit-btn:hover {
+    background-color: #2980B9;
+  }
+  
+  .chart-section {
+    width: 80%;
+    padding: 25px;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .chart-section h3 {
+    font-size: 2.5em;
+    color: #2D3436;
+    text-align: center;
+  }
+  

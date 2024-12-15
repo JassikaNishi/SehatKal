@@ -1,101 +1,232 @@
-import React from "react";
+import React, { useState } from "react";
 import { Line } from "react-chartjs-2";
-import {
-  Chart as ChartJS,
-  Title,
-  Tooltip,
-  Legend,
-  LineElement,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-} from "chart.js";
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from "chart.js";
+import "./Dashboard.css";
 
-ChartJS.register(Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale, PointElement);
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 const Dashboard = () => {
-  const chartData = {
-    labels: ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7"],
+  const [steps, setSteps] = useState("");
+  const [water, setWater] = useState("");
+  const [sleep, setSleep] = useState("");
+  const [workout, setWorkout] = useState("");
+  const [calories, setCalories] = useState("");
+  const [progressData, setProgressData] = useState([]);
+  const goalSteps = 10000;
+  const goalWater = 3;
+  const goalSleep = 8;
+  const goalWorkout = 2;
+  const goalCalories = 500;
+
+  const handleSubmit = () => {
+    const currentDate = new Date().toLocaleDateString();
+    const newData = {
+      date: currentDate,
+      steps: Number(steps),
+      water: Number(water),
+      sleep: Number(sleep),
+      workout: Number(workout),
+      calories: Number(calories),
+    };
+
+    setProgressData((prevData) => [...prevData, newData]);
+    setSteps("");
+    setWater("");
+    setSleep("");
+    setWorkout("");
+    setCalories("");
+  };
+
+  const data = {
+    labels: progressData.map((entry) => entry.date),
     datasets: [
       {
-        label: "Workouts Completed",
-        data: [5, 7, 8, 6, 9, 10, 11],
+        label: "Steps",
+        data: progressData.map((entry) => entry.steps),
+        borderColor: "#1E88E5",
+        backgroundColor: "#1E88E5",
+        fill: false,
+        pointRadius: 5,
+        borderWidth: 2,
+      },
+      {
+        label: "Water Intake (L)",
+        data: progressData.map((entry) => entry.water),
         borderColor: "#4CAF50",
-        backgroundColor: "rgba(76, 175, 80, 0.2)",
-        fill: true,
-        tension: 0.1,
+        backgroundColor: "#4CAF50",
+        fill: false,
+        pointRadius: 5,
+        borderWidth: 2,
       },
       {
-        label: "Average Mood Rating",
-        data: [4, 4.5, 4.2, 4.7, 4.8, 4.9, 5],
+        label: "Sleep (hrs)",
+        data: progressData.map((entry) => entry.sleep),
+        borderColor: "#FFC107",
+        backgroundColor: "#FFC107",
+        fill: false,
+        pointRadius: 5,
+        borderWidth: 2,
+      },
+      {
+        label: "Workout (hrs)",
+        data: progressData.map((entry) => entry.workout),
         borderColor: "#FF5722",
-        backgroundColor: "rgba(255, 87, 34, 0.2)",
-        fill: true,
-        tension: 0.1,
+        backgroundColor: "#FF5722",
+        fill: false,
+        pointRadius: 5,
+        borderWidth: 2,
       },
       {
-        label: "Hours of Sleep",
-        data: [7, 6.5, 7.2, 7.5, 8, 8.2, 8.5],
-        borderColor: "#2196F3",
-        backgroundColor: "rgba(33, 150, 243, 0.2)",
-        fill: true,
-        tension: 0.1,
+        label: "Calories Burned",
+        data: progressData.map((entry) => entry.calories),
+        borderColor: "#9C27B0",
+        backgroundColor: "#9C27B0",
+        fill: false,
+        pointRadius: 5,
+        borderWidth: 2,
       },
     ],
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      <header className="bg-blue-600 text-white py-4 px-8 shadow-md">
-        <h1 className="text-3xl font-bold">Dashboard</h1>
-      </header>
-
-      <main className="p-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8">
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold text-gray-700">Workouts Completed</h3>
-            <p className="text-3xl font-bold text-gray-900">58</p>
+    <div className="dashboard-container">
+      <div className="dashboard-header">
+        <h1>Health Tracker</h1>
+      </div>
+      <div className="dashboard-content">
+        <div className="summary-left">
+          <h2>Today's Health Summary</h2>
+          <div className="summary-item">
+            <h3>Steps</h3>
+            <p>{steps || 0}/{goalSteps} steps</p>
+            <div className="progress-bar">
+              <div
+                className="progress"
+                style={{
+                  width: `${(steps / goalSteps) * 100}%`,
+                  backgroundColor: "#1E88E5",
+                }}
+              ></div>
+            </div>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold text-gray-700">Average Mood Rating</h3>
-            <p className="text-3xl font-bold text-gray-900">4.6/5</p>
+          <div className="summary-item">
+            <h3>Water Intake</h3>
+            <p>{water || 0}/{goalWater} L</p>
+            <div className="progress-bar">
+              <div
+                className="progress"
+                style={{
+                  width: `${(water / goalWater) * 100}%`,
+                  backgroundColor: "#4CAF50",
+                }}
+              ></div>
+            </div>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold text-gray-700">Hours of Sleep (Avg.)</h3>
-            <p className="text-3xl font-bold text-gray-900">7.8</p>
+          <div className="summary-item">
+            <h3>Sleep</h3>
+            <p>{sleep || 0}/{goalSleep} hours</p>
+            <div className="progress-bar">
+              <div
+                className="progress"
+                style={{
+                  width: `${(sleep / goalSleep) * 100}%`,
+                  backgroundColor: "#FFC107",
+                }}
+              ></div>
+            </div>
+          </div>
+          <div className="summary-item">
+            <h3>Workout</h3>
+            <p>{workout || 0}/{goalWorkout} hours</p>
+            <div className="progress-bar">
+              <div
+                className="progress"
+                style={{
+                  width: `${(workout / goalWorkout) * 100}%`,
+                  backgroundColor: "#FF5722",
+                }}
+              ></div>
+            </div>
+          </div>
+          <div className="summary-item">
+            <h3>Calories Burned</h3>
+            <p>{calories || 0}/{goalCalories} kcal</p>
+            <div className="progress-bar">
+              <div
+                className="progress"
+                style={{
+                  width: `${(calories / goalCalories) * 100}%`,
+                  backgroundColor: "#9C27B0",
+                }}
+              ></div>
+            </div>
           </div>
         </div>
-
-        <div className="bg-white p-6 rounded-lg shadow-lg mb-8" style={{ height: "300px" }}>
-          <h3 className="text-xl font-semibold text-gray-700 mb-4">Your Progress Over Time</h3>
-          <Line
-            data={chartData}
-            options={{
-              responsive: true,
-              maintainAspectRatio: false,
-              scales: {
-                x: { beginAtZero: true },
-                y: { beginAtZero: true },
-              },
-            }}
-          />
+        <div className="input-right">
+          <h2>Enter Your Data</h2>
+          <form onSubmit={(e) => e.preventDefault()}>
+            <div className="input-item">
+              <label>Steps</label>
+              <input
+                type="number"
+                value={steps}
+                onChange={(e) => setSteps(e.target.value)}
+                placeholder="Enter steps"
+              />
+            </div>
+            <div className="input-item">
+              <label>Water Intake (L)</label>
+              <input
+                type="number"
+                value={water}
+                onChange={(e) => setWater(e.target.value)}
+                placeholder="Enter water intake"
+              />
+            </div>
+            <div className="input-item">
+              <label>Sleep (hrs)</label>
+              <input
+                type="number"
+                value={sleep}
+                onChange={(e) => setSleep(e.target.value)}
+                placeholder="Enter sleep hours"
+              />
+            </div>
+            <div className="input-item">
+              <label>Workout (hrs)</label>
+              <input
+                type="number"
+                value={workout}
+                onChange={(e) => setWorkout(e.target.value)}
+                placeholder="Enter workout hours"
+              />
+            </div>
+            <div className="input-item">
+              <label>Calories Burned</label>
+              <input
+                type="number"
+                value={calories}
+                onChange={(e) => setCalories(e.target.value)}
+                placeholder="Enter calories burned"
+              />
+            </div>
+            <button type="submit" className="submit-btn" onClick={handleSubmit}>
+              Submit
+            </button>
+          </form>
         </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold text-gray-700">Nutrition Insights</h3>
-            <p className="text-gray-600">
-              This section could include charts or information about your calorie intake, macro breakdown, etc.
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold text-gray-700">Goals & Achievements</h3>
-            <p className="text-gray-600">
-              Track your goals, completed milestones, and upcoming challenges here.
-            </p>
-          </div>
-        </div>
-      </main>
+      </div>
+      <div className="chart-section">
+        <h3>Progress Analytics</h3>
+        <Line data={data} />
+        <ul>
+          {progressData.map((entry, index) => (
+            <li key={index}>
+              {entry.date} - Steps: {entry.steps}, Water: {entry.water}, Sleep: {entry.sleep}, Workout: {entry.workout}, Calories: {entry.calories}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
