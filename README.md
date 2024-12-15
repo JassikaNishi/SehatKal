@@ -131,4 +131,3 @@ OR
   GitHub: [github.com/13Anisha](https://github.com/13Anisha)
 ```
 
-This is formatted in Markdown and ready to be copied directly into your GitHub README file. Just make sure to replace the placeholder sections (like "Add the screenshots of your application here") with actual content or links when necessary.
