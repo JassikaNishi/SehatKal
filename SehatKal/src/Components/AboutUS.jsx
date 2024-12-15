@@ -1,66 +1,97 @@
-import React from "react";
-import "./aboutus.css";
+import React from 'react';
 
-function AboutUs() {
-    return (
-        <>
-            <div className="about">
-                <div className="navbar">
-                    <div className="logo-container">
-                        <div className="logo">
-                            <span className="logo1"></span>
-                            FitTrack
-                        </div>
-                    </div>
+export default function AboutUs() {
+  const backgroundStyle = {
+    backgroundImage: 'url("./aboutus.jpg")',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundAttachment: 'fixed',
+    backgroundPosition: 'top',
+    minHeight: '100vh',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '20px',
+  };
 
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a>
-                            <div className="dropdown">
-                                <a href="#aboutus">About Us</a>
-                                <a href="#product">Our Product</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+  const contentBoxStyle = {
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    borderRadius: '15px',
+    padding: '30px',
+    maxWidth: '800px',
+    textAlign: 'center',
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+  };
 
-                <div className="content-section">
-                    <div className="section-title">About Us</div>
-                    <div className="section-content">
-                        <p>
-                            At <strong>FitTrack</strong>, we are passionate about helping students lead healthier, more active lives. Our mission is to provide an easy-to-use platform that empowers students to track their daily fitness and wellness activities. We believe that a balanced lifestyle—incorporating regular physical activity and proper hydration—is essential to a student's well-being and academic success.
-                        </p>
-                        <h3>Our Mission</h3>
-                        <p>
-                            Our mission is to deliver an accessible and effective way for students to track their daily steps, water intake, and fitness goals, helping them stay motivated to improve their physical and mental health.
-                        </p>
-                        <h3>Our Vision</h3>
-                        <p>
-                            We envision a future where students embrace healthy living habits that will lead them to success both in and out of the classroom. We want to foster a community that actively encourages and supports fitness and well-being.
-                        </p>
-                    </div>
-                </div>
+  const headingStyle = {
+    fontSize: '3rem',
+    marginBottom: '20px',
+    color: '#333',
+  };
 
-                <div className="content-section solid-background">
-                    <div className="section-title">Our Values</div>
-                    <div className="section-content">
-                        <ul>
-                            <li><strong>Innovation:</strong> We strive to provide new, creative tools that support students' health and fitness goals.</li>
-                            <li><strong>Quality:</strong> We are committed to delivering high-quality, user-friendly solutions for students' wellness.</li>
-                            <li><strong>Integrity:</strong> We operate with transparency and honesty, offering solutions that students can trust.</li>
-                            <li><strong>Student Focus:</strong> We are dedicated to helping students lead healthier, balanced lives that improve both their academic and personal well-being.</li>
-                        </ul>
-                    </div>
-                </div>
+  const subHeadingStyle = {
+    fontSize: '2rem',
+    marginTop: '20px',
+    color: '#555',
+  };
 
-                <footer className="footer">
-                    <div className="section-content">
-                        &copy; 2024 FitTrack. All rights reserved.
-                    </div>
-                </footer>
-            </div>
-        </>
-    );
+  const paragraphStyle = {
+    fontSize: '1.2rem',
+    lineHeight: '1.6',
+    color: '#666',
+  };
+
+  const listStyle = {
+    listStyleType: 'disc',
+    marginLeft: '20px',
+    textAlign: 'left',
+    color: '#666',
+  };
+
+  return (
+    <div style={backgroundStyle}>
+      <div style={contentBoxStyle}>
+        <h1 style={headingStyle}>About Us</h1>
+        <div>
+          <h2 style={subHeadingStyle}>Our Mission</h2>
+          <p style={paragraphStyle}>
+            At SehatKal, our mission is to improve healthcare accessibility and awareness by
+            leveraging the power of technology. We are dedicated to ensuring that everyone has access
+            to accurate health information and quality services.
+          </p>
+        </div>
+        <div>
+          <h2 style={subHeadingStyle}>Our Vision</h2>
+          <p style={paragraphStyle}>
+            We envision a world where technology bridges gaps in healthcare, empowering individuals
+            to take control of their health and well-being.
+          </p>
+        </div>
+        <div>
+          <h2 style={subHeadingStyle}>Our Values</h2>
+          <p style={paragraphStyle}>
+            Our core values include empathy, innovation, and inclusivity. We strive to create solutions
+            that are accessible to all, regardless of location or background.
+          </p>
+        </div>
+        <div>
+          <h2 style={subHeadingStyle}>What We Offer</h2>
+          <ul style={listStyle}>
+            <li>Comprehensive health education resources.</li>
+            <li>Technology-driven tools for self-diagnosis and monitoring.</li>
+            <li>Accessible healthcare services through strategic partnerships.</li>
+            <li>Community support for mental and physical well-being.</li>
+          </ul>
+        </div>
+        <div>
+          <h2 style={subHeadingStyle}>Our Team</h2>
+          <p style={paragraphStyle}>
+            SehatKal is powered by a team of dedicated professionals, including healthcare experts,
+            software developers, and community leaders. Together, we work to make healthcare
+            accessible, equitable, and efficient.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 }
-
-export default AboutUs;
