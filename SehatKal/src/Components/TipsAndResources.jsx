@@ -7,7 +7,7 @@ const useFadeIn = () => {
 
 const TipsAndResources = () => {
   return (
-    <div className="bg-gradient-to-r from-blue-100 to-purple-200 min-h-screen">
+    <div className="bg-gradient-to-r from-purple-100 to-purple-200 min-h-screen">
       <div className="text-center py-10">
         <h1 className="text-5xl font-extrabold text-gray-800 animate__animated animate__fadeIn animate__delay-1s">
           Tips & Resources for a Healthy Lifestyle

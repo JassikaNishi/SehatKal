@@ -1,167 +1,177 @@
 .dashboard-container {
     font-family: 'Arial', sans-serif;
-    background-color: #F5F6FA;
+    background-color: #f0f4f8;
     padding: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100vh;
     box-sizing: border-box;
-  }
-  
-  .dashboard-header {
+}
+
+.dashboard-header {
     text-align: center;
     margin-bottom: 30px;
-  }
-  
-  h1 {
+}
+
+h1 {
     font-size: 3.5em;
-    color: #2D3436;
+    color: #2c3e50;
     font-weight: bold;
     letter-spacing: 1px;
     text-transform: uppercase;
     margin-bottom: 15px;
-  }
-  
-  .dashboard-content {
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-content {
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin-bottom: 40px;
-    flex-wrap: wrap; /* Added to support responsiveness */
-  }
-  
-  .summary-left {
+    flex-wrap: wrap;
+}
+
+.summary-left {
     width: 60%;
     padding: 25px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
     margin-right: 20px;
     box-sizing: border-box;
-  }
-  
-  .summary-left h2 {
+    transition: transform 0.3s ease;
+}
+
+.summary-left:hover {
+    transform: scale(1.02);
+}
+
+.summary-left h2 {
     font-size: 2.5em;
-    color: #2D3436;
+    color: #2c3e50;
     text-align: center;
     margin-bottom: 20px;
-  }
-  
-  .summary-item {
+}
+
+.summary-item {
     margin-bottom: 25px;
     padding: 15px;
-    background-color: #F1F2F6;
+    background-color: #ecf0f1;
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  .summary-item h3 {
+    transition: background-color 0.3s ease;
+}
+
+.summary-item:hover {
+    background-color: #dfe6e9;
+}
+
+.summary-item h3 {
     font-size: 1.3em;
-    color: #34495E;
-  }
-  
-  .summary-item p {
+    color: #34495e;
+}
+
+.summary-item p {
     font-size: 1.1em;
-    color: #7F8C8D;
+    color: #7f8c8d;
     margin-right: 20px;
-  }
-  
-  .progress-bar {
+}
+
+.progress-bar {
     width: 80%;
     height: 10px;
-    background-color: #ECF0F1;
+    background-color: #bdc3c7;
     border-radius: 5px;
-  }
-  
-  .progress {
+}
+
+.progress {
     height: 100%;
     border-radius: 5px;
-  }
-  
-  .input-right {
+}
+
+.input-right {
     width: 35%;
     padding: 25px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
-  }
-  
-  .input-right h2 {
+}
+
+.input-right h2 {
     font-size: 2.2em;
-    color: #2D3436;
+    color: #2c3e50;
     margin-bottom: 25px;
     text-align: center;
-  }
-  
-  .input-item {
+}
+
+.input-item {
     margin-bottom: 20px;
-  }
-  
-  .input-item label {
+}
+
+.input-item label {
     font-size: 1.1em;
-    color: #34495E;
+    color: #34495e;
     margin-bottom: 5px;
-  }
-  
-  .input-item input {
+}
+
+.input-item input {
     width: 100%;
     padding: 12px;
     font-size: 1.1em;
     border-radius: 8px;
-    border: 1px solid #BDC3C7;
+    border: 1px solid #bdc3c7;
     transition: border 0.3s;
-  }
-  
-  .input-item input:focus {
-    border-color: #3498DB;
+}
+
+.input-item input:focus {
+    border-color: #2980b9;
     outline: none;
-  }
-  
-  .submit-btn {
+}
+
+.submit-btn {
     width: 100%;
     padding: 15px;
-    background-color: #3498DB;
+    background-color: #3498db;
     color: white;
     font-size: 1.3em;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s;
-  }
-  
-  .submit-btn:hover {
-    background-color: #2980B9;
-  }
-  
-  .chart-section {
+}
+
+.submit-btn:hover {
+    background-color: #2980b9;
+}
+
+.chart-section {
     width: 80%;
     padding: 25px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
     box-sizing: border-box;
-  }
-  
-  .chart-section h3 {
+}
+
+.chart-section h3 {
     font-size: 2.5em;
-    color: #2D3436;
+    color: #2c3e50;
     text-align: center;
     margin-bottom: 30px;
-  }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .summary-left, .input-right {
-      width: 100%;
-      margin-right: 0;
+        width: 100%;
+        margin-right: 0;
     }
     .dashboard-content {
-      flex-direction: column;
-      align-items: center;
+        flex-direction: column;
+        align-items: center;
     }
-  }
-  
+}

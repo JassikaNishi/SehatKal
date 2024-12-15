@@ -98,11 +98,11 @@ const Dashboard = () => {
   return (
     <div className="dashboard-container">
       <div className="dashboard-header">
-        <h1>Health Tracker</h1>
+        <h1 className="header-title">Your Daily Health Tracker</h1>
       </div>
       <div className="dashboard-content">
         <div className="summary-left">
-          <h2>Today's Health Summary</h2>
+          <h2 className="summary-title">Today's Health Overview</h2>
           <div className="summary-item">
             <h3>Steps</h3>
             <p>{steps || 0}/{goalSteps} steps</p>
@@ -170,7 +170,7 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="input-right">
-          <h2>Enter Your Data</h2>
+          <h2 className="input-title">Enter Your Daily Stats</h2>
           <form onSubmit={(e) => e.preventDefault()}>
             <div className="input-item">
               <label>Steps</label>
@@ -178,7 +178,8 @@ const Dashboard = () => {
                 type="number"
                 value={steps}
                 onChange={(e) => setSteps(e.target.value)}
-                placeholder="Enter steps"
+                placeholder="How many steps today?"
+                className="input-field"
               />
             </div>
             <div className="input-item">
@@ -187,7 +188,8 @@ const Dashboard = () => {
                 type="number"
                 value={water}
                 onChange={(e) => setWater(e.target.value)}
-                placeholder="Enter water intake"
+                placeholder="How much water?"
+                className="input-field"
               />
             </div>
             <div className="input-item">
@@ -196,7 +198,8 @@ const Dashboard = () => {
                 type="number"
                 value={sleep}
                 onChange={(e) => setSleep(e.target.value)}
-                placeholder="Enter sleep hours"
+                placeholder="Hours of sleep?"
+                className="input-field"
               />
             </div>
             <div className="input-item">
@@ -205,7 +208,8 @@ const Dashboard = () => {
                 type="number"
                 value={workout}
                 onChange={(e) => setWorkout(e.target.value)}
-                placeholder="Enter workout hours"
+                placeholder="Workout hours?"
+                className="input-field"
               />
             </div>
             <div className="input-item">
@@ -214,21 +218,22 @@ const Dashboard = () => {
                 type="number"
                 value={calories}
                 onChange={(e) => setCalories(e.target.value)}
-                placeholder="Enter calories burned"
+                placeholder="Calories burned?"
+                className="input-field"
               />
             </div>
             <button type="submit" className="submit-btn" onClick={handleSubmit}>
-              Submit
+              Add Stats
             </button>
           </form>
         </div>
       </div>
       <div className="chart-section">
-        <h3>Progress Analytics</h3>
+        <h3>Progress Tracker</h3>
         <Line data={data} />
-        <ul>
+        <ul className="progress-list">
           {progressData.map((entry, index) => (
-            <li key={index}>
+            <li key={index} className="progress-item">
               {entry.date} - Steps: {entry.steps}, Water: {entry.water}, Sleep: {entry.sleep}, Workout: {entry.workout}, Calories: {entry.calories}
             </li>
           ))}
