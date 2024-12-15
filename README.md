@@ -41,6 +41,9 @@ Before running the project locally, make sure you have the following installed:
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/JassikaNishi/SehatKal.git
+Here is the content ready to be copied and pasted directly into your GitHub README file:
+
+```markdown
 ## Installation
 
 ### Install dependencies:
@@ -49,67 +52,83 @@ For the Frontend:
 ```bash
 cd SehatKal/SehatKal
 npm install
-For the Backend:
+```
 
-bash
-Copy code
+For the Backend:
+```bash
 cd SehatKal/server
 npm install
-Set up environment variables:
-In the backend folder, create a .env file and add the following:
+```
 
-makefile
-Copy code
+### Set up environment variables:
+
+In the backend folder, create a `.env` file and add the following:
+```makefile
 MONGO_URI=your-mongodb-uri
 JWT_SECRET=your-jwt-secret-key
-In the frontend folder, create a .env file and add:
+```
 
-bash
-Copy code
+In the frontend folder, create a `.env` file and add:
+```bash
 VITE_API_URL=http://localhost:5000
-Start the backend server:
-bash
-Copy code
+```
+
+### Start the backend server:
+```bash
 cd SehatKal/server
 npm start
-Start the frontend server:
-bash
-Copy code
+```
+
+### Start the frontend server:
+```bash
 cd SehatKal/SehatKal
 npm run dev
-Visit http://localhost:3000 in your browser to view the website.
+```
 
-Usage
-Login or Register: On the home page, users can log in or create a new account.
-Health Data: Once logged in, users can input and track their health data, such as weight, blood pressure, and heart rate.
-Consultation Booking: Users can book consultations with healthcare professionals through the platform.
-Demo Accounts
-User Account:
+Visit [http://localhost:3000](http://localhost:3000) in your browser to view the website.
 
-Username: demoUser
-Password: demoPassword
-Admin Account (Healthcare Professional):
+## Usage
 
-Username: admin
-Password: admin123
-Screenshots
-Dashboard Overview
-Health Data Form
-(Add the screenshots of your application here).
+- **Login or Register**: On the home page, users can log in or create a new account.
+- **Health Data**: Once logged in, users can input and track their health data, such as weight, blood pressure, and heart rate.
+- **Consultation Booking**: Users can book consultations with healthcare professionals through the platform.
 
-Contributors
+### Demo Accounts
+
+- **User Account**:
+  - Username: demoUser
+  - Password: demoPassword
+
+- **Admin Account (Healthcare Professional)**:
+  - Username: admin
+  - Password: admin123
+
+## Screenshots
+
+- **Dashboard Overview**  
+- **Health Data Form**  
+
+
+## Contributors
+
 We thank the following contributors for their work on this project:
 
-Anisha Plawat GitHub Profile
-Jassika GitHub Profile
-Contact
+- **Anisha Plawat** [GitHub Profile](https://github.com/13Anisha)
+- **Jassika** [GitHub Profile](https://github.com/JassikaNishi)
+
+## Contact
+
 For any inquiries or feedback, you can reach out to:
 
-Jassika
-Email: jassika.jassika.jassika@gmail.com
-GitHub: github.com/JassikaNishi
+- **Jassika**  
+  Email: [jassika.jassika.jassika@gmail.com](mailto:jassika.jassika.jassika@gmail.com)  
+  GitHub: [github.com/JassikaNishi](https://github.com/JassikaNishi)
+
 OR
 
-Anisha Plawat
-Email: anisha.plawat@gmail.com
-GitHub: github.com/13Anisha
+- **Anisha Plawat**  
+  Email: [anisha.plawat@gmail.com](mailto:anisha.plawat@gmail.com)  
+  GitHub: [github.com/13Anisha](https://github.com/13Anisha)
+```
+
+This is formatted in Markdown and ready to be copied directly into your GitHub README file. Just make sure to replace the placeholder sections (like "Add the screenshots of your application here") with actual content or links when necessary.
