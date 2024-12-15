@@ -29,6 +29,8 @@ const Navbar = () => {
         { link: "Contact Us", path: "/contact-page" },
         { link: "Login", path: "/login" },
         { link: "Signup", path: "/signup" },
+        { link: "Tips And Resources", path: "/tips" },
+        { link: "Profile", path: "/profile" },
     ];
 
     return (
