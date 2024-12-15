@@ -41,37 +41,38 @@ Before running the project locally, make sure you have the following installed:
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/JassikaNishi/SehatKal.git
-Install dependencies:
+## Installation
+
+### Install dependencies:
 
 For the Frontend:
-bash
-Copy code
+```bash
 cd SehatKal/SehatKal
 npm install
 For the Backend:
+
 bash
 Copy code
 cd SehatKal/server
 npm install
 Set up environment variables:
-
 In the backend folder, create a .env file and add the following:
+
 makefile
 Copy code
 MONGO_URI=your-mongodb-uri
 JWT_SECRET=your-jwt-secret-key
 In the frontend folder, create a .env file and add:
-arduino
+
+bash
 Copy code
 VITE_API_URL=http://localhost:5000
 Start the backend server:
-
 bash
 Copy code
 cd SehatKal/server
 npm start
 Start the frontend server:
-
 bash
 Copy code
 cd SehatKal/SehatKal
@@ -84,30 +85,31 @@ Health Data: Once logged in, users can input and track their health data, such a
 Consultation Booking: Users can book consultations with healthcare professionals through the platform.
 Demo Accounts
 User Account:
+
 Username: demoUser
 Password: demoPassword
 Admin Account (Healthcare Professional):
+
 Username: admin
 Password: admin123
 Screenshots
 Dashboard Overview
-
 Health Data Form
+(Add the screenshots of your application here).
 
 Contributors
 We thank the following contributors for their work on this project:
 
-Anisha Plawat (#13Anisha)
-Jassika (#JassikaNishi)
-
-
+Anisha Plawat GitHub Profile
+Jassika GitHub Profile
 Contact
 For any inquiries or feedback, you can reach out to:
 
-Jassika 
+Jassika
 Email: jassika.jassika.jassika@gmail.com
 GitHub: github.com/JassikaNishi
 OR
+
 Anisha Plawat
 Email: anisha.plawat@gmail.com
 GitHub: github.com/13Anisha
