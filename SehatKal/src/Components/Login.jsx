@@ -57,7 +57,7 @@ export default function Login() {
     <div className='row g-0 justify-content-center align-items-center vh-100 login-container'>
       <div className="col-10 row g-0 border rounded-2 bg-white">
         <div className="d-none d-md-block col-6">
-          <img src="https://miro.medium.com/v2/resize:fit:1400/1*TErHODvkJTDfdOJyLNrjcw.jpeg" alt="" className='img-fluid h-100' />
+          <img src="./login.jpg" alt="" className='img-fluid h-100' />
         </div>
         <form className='col-12 col-md-6 px-3 py-4' onSubmit={handleLogin}>
           <div className='d-flex align-items-center justify-content-center'>
