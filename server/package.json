@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "build":"cd ../SehatKal && npm run build"
+    "build": "cd ../SehatKal && npm run build", 
+    "install-client": "cd ../SehatKal && npm install"
   },
   "type": "module",
   "keywords": [],
