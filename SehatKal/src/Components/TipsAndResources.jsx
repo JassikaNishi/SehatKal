@@ -1,9 +1,5 @@
-import React from "react";
-const useFadeIn = () => {
-  return {
-    animation: 'fadeIn 1s ease-in-out',
-  };
-};
+// import React from "react";
+
 
 const TipsAndResources = () => {
   return (
