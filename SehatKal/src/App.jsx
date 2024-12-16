@@ -5,7 +5,7 @@ import AboutUS from './Components/AboutUS';
 import ContactPage from './Components/ContactPage';
 import Login from './Components/Login';
 import SignUp from './Components/SignUp';
-import TipsAndResources from './Components/TipsandResources';
+import TipsAndResources from './Components/TipsAndResources';
 import ProfilePage from './Components/ProfilePage';
 import Analytics from './Components/Analytics';
 import Dashboard from './Components/Dashboard';
