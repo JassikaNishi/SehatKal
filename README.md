@@ -130,10 +130,5 @@ OR
   Email: [anishaplawat13@gmail.com](mailto:anisha.plawat@gmail.com)  
   GitHub: [github.com/13Anisha](https://github.com/13Anisha)
 ```
-![Screenshot 2024-12-16 212816](https://github.com/user-attachments/assets/27b67aaa-59e4-4e03-8eee-6fe8effed477)
-
-![Screenshot 2024-12-16 212913](https://github.com/user-attachments/assets/eedbcf3d-acfc-428e-a5a1-2b04da76a537)
-
-![Screenshot 2024-12-16 212946](https://github.com/user-attachments/assets/6cbfa2c1-dd6e-4a7b-93f9-0e2a4e526e44)
 
 
