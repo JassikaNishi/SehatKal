@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 
 const ProfilePage = () => {
   const [name, setName] = useState("Jassi");
   const [email, setEmail] = useState("jassie@example.com");
-  const [bio, setBio] = useState("Hi, I’m Jassi! I love fitness and healthy living.");
+  const [bio, ] = useState("Hi, I’m Jassi! I love fitness and healthy living.");
   const [profilePic, setProfilePic] = useState(null);
-  const [backgroundImage, setBackgroundImage] = useState(null);
+
   const [phone, setPhone] = useState("123-456-7890");
   const [address, setAddress] = useState("123 Healthy St, Fitness City, CA");
 
@@ -16,12 +16,7 @@ const ProfilePage = () => {
     }
   };
 
-  const handleBackgroundImageChange = (e) => {
-    if (e.target.files && e.target.files[0]) {
-      const file = URL.createObjectURL(e.target.files[0]);
-      setBackgroundImage(file);
-    }
-  };
+  
 
   const handleSave = () => {
     console.log("Profile updated:", { name, email, bio, phone, address });
@@ -31,7 +26,7 @@ const ProfilePage = () => {
     <div
       className="min-h-screen flex items-center justify-center bg-cover bg-center mt-16 mb-8"
       style={{
-        backgroundImage: `url(${backgroundImage || "./bg.jpg"})`,
+        
       }}
     >
       <div className="w-full sm:w-10/12 md:w-8/12 lg:w-7/12 xl:w-6/12 p-8 bg-opacity-70 backdrop-blur-lg rounded-lg shadow-xl flex flex-col">

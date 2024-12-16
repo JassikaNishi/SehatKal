@@ -6,7 +6,7 @@ import ContactPage from './Components/ContactPage';
 import Login from './Components/Login';
 import SignUp from './Components/SignUp';
 import TipsAndResources from './Components/TipsAndResources';
-import ProfilePage from './Components/ProfilePage';
+import ProfilePage from './Components/profilepage';
 import Analytics from './Components/Analytics';
 import Dashboard from './Components/Dashboard';
 import HomePage from './Components/Homepage';
