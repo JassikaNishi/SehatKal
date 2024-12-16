@@ -1,13 +1,15 @@
 import express from "express";
 import cors from "cors";
-import { json } from "body-parser";
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 
 const app = express();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.use(cors());
-app.use(json());
+app.use(express.json());
 
 let progressData = [
   {
@@ -28,14 +30,20 @@ let progressData = [
   },
 ];
 
-const writeToAnalyticsFile = () => {
-  const filePath = path.join(__dirname, "analytics.json");
-  fs.writeFileSync(filePath, JSON.stringify(progressData, null, 2));
+const analyticsFilePath = path.join(__dirname, "analytics.json");
+
+// Utility to write data to file
+const writeToAnalyticsFile = async () => {
+  try {
+    await fs.promises.writeFile(analyticsFilePath, JSON.stringify(progressData, null, 2));
+  } catch (err) {
+    console.error("Error writing to file:", err);
+  }
 };
 
+// GET: Progress data with optional period filtering
 app.get("/api/progress", (req, res) => {
   const { period } = req.query;
-
   let filteredData = progressData;
 
   if (period) {
@@ -53,7 +61,6 @@ app.get("/api/progress", (req, res) => {
           currentDate.getFullYear() === entryDate.getFullYear()
         );
       }
-
       return false;
     });
   }
@@ -61,7 +68,8 @@ app.get("/api/progress", (req, res) => {
   res.status(200).json(filteredData);
 });
 
-app.post("/api/progress", (req, res) => {
+// POST: Add new progress data
+app.post("/api/progress", async (req, res) => {
   const { date, steps, water, sleep, workout, calories } = req.body;
 
   if (!date || !steps || !water || !sleep || !workout || !calories) {
@@ -78,32 +86,37 @@ app.post("/api/progress", (req, res) => {
   };
 
   progressData.push(newProgress);
-  writeToAnalyticsFile();
+  await writeToAnalyticsFile();
 
   res.status(201).json(newProgress);
 });
 
+// GET: Retrieve analytics file data
 app.get("/api/analytics", (req, res) => {
-  const filePath = path.join(__dirname, "analytics.json");
-
-  if (fs.existsSync(filePath)) {
-    const fileContent = fs.readFileSync(filePath, "utf8");
-    res.status(200).json(JSON.parse(fileContent));
+  if (fs.existsSync(analyticsFilePath)) {
+    fs.promises
+      .readFile(analyticsFilePath, "utf8")
+      .then((fileContent) => {
+        res.status(200).json(JSON.parse(fileContent));
+      })
+      .catch((err) => {
+        res.status(500).json({ error: "Error reading analytics file" });
+      });
   } else {
     res.status(404).json({ error: "Analytics file not found" });
   }
 });
 
+// GET: Download analytics file
 app.get("/api/download-analytics", (req, res) => {
-  const filePath = path.join(__dirname, "analytics.json");
-
-  if (fs.existsSync(filePath)) {
-    res.download(filePath, "analytics.json");
+  if (fs.existsSync(analyticsFilePath)) {
+    res.download(analyticsFilePath, "analytics.json");
   } else {
     res.status(404).json({ error: "Analytics file not found" });
   }
 });
 
+// Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

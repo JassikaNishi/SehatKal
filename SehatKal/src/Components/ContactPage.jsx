@@ -34,31 +34,31 @@ const ContactUs = () => {
           <p className="text-gray-600 mb-4">
             <span className="font-semibold">Email:</span> SehatKal@gmail.com
           </p>
-          <div className="mt-6 flex space-x-4 justify-center">
+          <div className="mt-6 flex space-x-4 justify-start">
             <a
               href="#!"
-              className="bg-blue-500 p-4 rounded-full text-white hover:bg-blue-400"
+              className="text-black text-2xl hover:opacity-50"
               aria-label="Facebook"
             >
               <i className="fab fa-facebook-f"></i>
             </a>
             <a
               href="#!"
-              className="bg-blue-400 p-4 rounded-full text-white hover:bg-blue-300"
+              className="text-black text-2xl hover:opacity-50"
               aria-label="Twitter"
             >
               <i className="fab fa-twitter"></i>
             </a>
             <a
               href="#!"
-              className="bg-blue-600 p-4 rounded-full text-white hover:bg-blue-500"
+              className="text-black text-2xl hover:opacity-50"
               aria-label="LinkedIn"
             >
               <i className="fab fa-linkedin-in"></i>
             </a>
             <a
               href="#!"
-              className="bg-pink-500 p-4 rounded-full text-white hover:bg-pink-400"
+              className="text-black text-2xl hover:opacity-50"
               aria-label="Instagram"
             >
               <i className="fab fa-instagram"></i>
