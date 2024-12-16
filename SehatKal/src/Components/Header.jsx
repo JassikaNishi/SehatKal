@@ -68,7 +68,7 @@ const Header = () => {
                 <Link
                   to={path}
                   onClick={() => setActiveTab(path)} 
-                  className={`text-base text-black uppercase cursor-pointer hover:text-blue-300 ${activeTab === path ? "text-blue-500 font-bold" : ""}`} // Apply styles when active
+                  className={`text-base text-black uppercase cursor-pointer hover:text-blue-300 ${activeTab === path ? "text-blue-500 font-bold" : ""}`}
                 >
                   {link}
                 </Link>
@@ -131,8 +131,8 @@ const Header = () => {
             <Link
               key={path}
               to={path}
-              onClick={() => setActiveTab(path)} // Set active tab on click
-              className={`block text-base text-white uppercase cursor-pointer hover:text-blue-300 ${activeTab === path ? "text-blue-500 font-bold" : ""}`} // Apply styles when active
+              onClick={() => setActiveTab(path)}
+              className={`block text-base text-white uppercase cursor-pointer hover:text-blue-300 ${activeTab === path ? "text-blue-500 font-bold" : ""}`}
             >
               {link}
             </Link>
