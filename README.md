@@ -127,7 +127,7 @@ For any inquiries or feedback, you can reach out to:
 OR
 
 - **Anisha Plawat**  
-  Email: [anisha.plawat@gmail.com](mailto:anisha.plawat@gmail.com)  
+  Email: [anishaplawat13@gmail.com](mailto:anisha.plawat@gmail.com)  
   GitHub: [github.com/13Anisha](https://github.com/13Anisha)
 ```
 
