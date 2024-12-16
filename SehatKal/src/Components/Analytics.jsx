@@ -4,13 +4,36 @@ import { Chart as ChartJS, Title, Tooltip, Legend, LineElement, CategoryScale, L
 
 ChartJS.register(Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale, PointElement);
 
+// Helper function to generate random data
+const generateRandomData = (numDays = 7) => {
+  const randomBetween = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+  const data = [];
+  const today = new Date();
+
+  for (let i = 0; i < numDays; i++) {
+    const date = new Date(today);
+    date.setDate(today.getDate() - i); // Create past dates
+    data.unshift({
+      date: date.toISOString().split("T")[0], // Format date as YYYY-MM-DD
+      workout: randomBetween(0, 5), // Random number of workouts
+      mood: randomBetween(1, 10), // Mood rating between 1 and 10
+      sleep: randomBetween(4, 10), // Hours of sleep between 4 and 10
+    });
+  }
+  return data;
+};
+
 const Analytics = ({ dashboardData }) => {
   const [progressData, setProgressData] = useState([]);
   const [selectedPeriod, setSelectedPeriod] = useState("Weekly");
 
   useEffect(() => {
-    if (dashboardData) {
+    if (dashboardData && dashboardData.length > 0) {
       setProgressData(dashboardData);
+    } else {
+      // Generate random data if no dashboardData is provided
+      setProgressData(generateRandomData());
     }
   }, [dashboardData]);
 
