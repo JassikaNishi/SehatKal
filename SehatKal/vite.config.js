@@ -30,7 +30,8 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   build: {
-    outDir: '../server/SehatKal/dist', // Output React build files to the server's dist directory
-  },
+    outDir: 'dist', // Ensure output is in the dist folder
+  }
 });
+
 
