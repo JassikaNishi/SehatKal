@@ -42,20 +42,20 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { link: "Home", path: "/home" },
-    { link: "About Us", path: "/aboutus" },
-    { link: "Contact Us", path: "/contact-page" },
+    { link: "Home", path: "/" },
     { link: "Tips And Resources", path: "/tips" },
     { link: "Dashboard", path: "/dashboard" },
     { link: "Analytics", path: "/analytics" },
+    { link: "About Us", path: "/aboutus" },
+    { link: "Contact Us", path: "/contact-page" },
   ];
 
   return (
     <header
-      className={`w-full fixed top-0 left-0 right-0 transition-all duration-300 ease-in-all ${isSticky ? "bg-[rgb(173,216,254)]" : "bg-transparent"}`}
+      className={`w-full fixed top-0 left-0 right-0 transition-all duration-300 ease-in-all ${isSticky ? "bg-[rgb(107, 72, 122)]" : "bg-transparent"}`}
     >
       <div
-        className={`flex items-center justify-between py-3 px-6 shadow-md ${isSticky ? "bg-[rgb(163,210,252)]" : "bg-transparent"}`}
+        className={`flex items-center justify-between py-3 px-6 shadow-md ${isSticky ? "bg-[rgb(106, 75, 134)]" : "bg-transparent"}`}
       >
         <h1 className="text-3xl font-bold text-[rgb(137,190,236)]">
           SehatKal.co
